@@ -19,6 +19,7 @@ GET /weather/<location_key>
 Example:
 
 GET /weather/new-york
+
 Response Example
 {
   "city": "New York",
@@ -27,45 +28,38 @@ Response Example
   "humidity": 70,
   "wind_speed": 2.57
 }
-Environment Variable
 
+
+Environment Variable
 This service requires an OpenWeatherMap API key.
 
-Variable	Description
-API_KEY	OpenWeatherMap API key
+Variable     	Description
+API_KEY     	OpenWeatherMap API key
+
+
 Run Locally
-
 Install dependencies:
-
 pip install -r requirements.txt
 
-Set API key:
-
-PowerShell:
-
+Set API key(PS):
 $env:API_KEY="your_api_key_here"
 
 Run the app:
-
 python app.py
 
 Open:
-
 http://localhost:5000/weather/new-york
+
 Run with Docker
-
 Build the image:
-
 docker build -t weather-backend .
 
 Run the container:
-
 docker run -p 5000:5000 -e API_KEY="your_api_key_here" weather-backend
 
 Test in browser:
-
 http://localhost:5000/weather/new-york
-Notes
 
+Notes
 The API key is not stored in the code or in GitHub.
 It must be provided as an environment variable when running the service.
